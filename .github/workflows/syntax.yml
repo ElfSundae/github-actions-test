@@ -3,10 +3,12 @@ name: Actions Syntax Test
 on: push
 
 jobs:
-  build:
+  syntax:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+
+      - run: echo $GITHUB_REF
 
       - name: Multi-line commands
         run: |
