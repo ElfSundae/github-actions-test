@@ -10,5 +10,8 @@ jobs:
 
       - name: Multi-line commands
         run: |
-          unsuccessful.sh
+          ./unsuccessful.sh
           echo "Next"
+
+      - name: Next step
+        run: echo "I am the next step"
