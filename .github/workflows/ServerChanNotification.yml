@@ -28,7 +28,8 @@ jobs:
       #     title: "This is title"
 
       - name: Send Notification
-        run: curl --data-urlencode "text=$TITLE" "https://sc.ftqq.com/${SERVERCHAN_SCKEY}.send"
+        run: |
+          curl --data-urlencode "text=Published $GITHUB_REPOSITORY $(basename $GITHUB_REF)" \
+            "https://sc.ftqq.com/${SERVERCHAN_SCKEY}.send"
         env:
           SERVERCHAN_SCKEY: ${{ secrets.SERVERCHAN_SCKEY }}
-          TITLE: "Published $GITHUB_REPOSITORY $(basename $GITHUB_REF)"
