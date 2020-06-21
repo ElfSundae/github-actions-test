@@ -8,12 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: echo $GITHUB_REF
-
-      - name: Multi-line commands
+      - name: echo env
         run: |
-          ./unsuccessful.sh
-          echo "Next"
+          echo $GITHUB_REF
+          echo $(basename $GITHUB_REF)
+
+      # - name: Multi-line commands
+      #   run: |
+      #     ./unsuccessful.sh
+      #     echo "Next"
 
       - name: Next step
         run: echo "I am the next step"
