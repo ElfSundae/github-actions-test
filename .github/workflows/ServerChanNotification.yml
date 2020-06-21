@@ -17,3 +17,12 @@ jobs:
           ServerChanSCKEY: ${{ secrets.ServerChanSCKEY }}
           title: "This is title"
           content: "This is content"
+
+      - name: Send ServerChan Notification (without content)
+        run: |
+          curl --data-urlencode "text=$title" \
+            --data-urlencode "desp=$content" \
+            "https://sc.ftqq.com/${ServerChanSCKEY}.send"
+        env:
+          ServerChanSCKEY: ${{ secrets.ServerChanSCKEY }}
+          title: "This is title"
