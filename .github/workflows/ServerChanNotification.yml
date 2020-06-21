@@ -1,0 +1,19 @@
+name: ServerChan Notification
+
+on: push
+
+jobs:
+  notify:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Send ServerChan Notification
+        run: |
+          curl --data-urlencode "text=$title" \
+            --data-urlencode "desp=$content" \
+            "https://sc.ftqq.com/${ServerChanSCKEY}.send"
+        env:
+          ServerChanSCKEY: ${{ secrets.ServerChanSCKEY }}
+          title: "This is title"
+          content: "This is content"
