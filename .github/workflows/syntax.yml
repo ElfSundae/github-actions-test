@@ -22,4 +22,6 @@ jobs:
         run: echo "I am the next step"
 
       - name: Check git command
-        run: git clone git@github.com:laravel/docs.git laravel-docs
+        run: |
+          git config --global url."https://github.com/".insteadOf ssh://git@github.com/
+          git clone git@github.com:laravel/docs.git laravel-docs
