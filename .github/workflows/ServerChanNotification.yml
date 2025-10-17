@@ -1,6 +1,7 @@
 name: ServerChan Notification
 
-on: push
+on:
+  workflow_dispatch:
 
 jobs:
   notify:
