@@ -1,6 +1,7 @@
 name: Check Environment and Packages
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -19,6 +20,8 @@ jobs:
       - name: Check
         run: |
           set +e
+          set -x
+
           git --version
           gh --version
           jq --version
@@ -28,4 +31,5 @@ jobs:
 
           php -v
           pear version
+
           set -e
