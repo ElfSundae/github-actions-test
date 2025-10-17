@@ -20,6 +20,8 @@ jobs:
           set +e
           set -x
 
+          echo "$GITHUB_REPOSITORY_OWNER"
+
           git --version
           gh --version
           jq --version
