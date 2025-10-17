@@ -14,8 +14,6 @@ jobs:
           - "ubuntu-latest"
           - "macos-latest"
 
-    name: Check Environment and Packages on ${{ matrix.os }}
-
     steps:
       - name: Check
         run: |
