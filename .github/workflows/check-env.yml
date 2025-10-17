@@ -19,6 +19,8 @@ jobs:
       - name: Check
         run: |
           set +e
+          git --version
+          gh --version
           jq --version
           xmllint -version
 
