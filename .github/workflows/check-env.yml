@@ -33,3 +33,13 @@ jobs:
           pear version
 
           set -e
+
+      - name: test md5
+        run: |
+          mkdir -p testdir
+          cd testdir
+          echo "aaaa" > a.txt
+          echo "bbbb" > b.txt
+          find . -type f -print0 | sort -z | xargs -0 md5sum
+          find . -type f -print0 | sort -z | xargs -0 md5sum | md5sum
+          find . -type f -print0 | sort -z | xargs -0 md5sum | md5sum | cut -c1-6
