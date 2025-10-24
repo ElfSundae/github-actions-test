@@ -36,6 +36,7 @@ jobs:
 
       - name: test md5
         run: |
+          set -euo pipefail
           mkdir -p testdir
           cd testdir
           echo "aaaa" > a.txt
